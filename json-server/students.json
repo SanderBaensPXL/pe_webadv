@@ -1,0 +1,58 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Elena"
+    },
+    {
+      "id": 2,
+      "name": "Sofie"
+    },
+    {
+      "name": "Tony",
+      "id": 3
+    },
+    {
+      "name": "Fred",
+      "id": 4
+    }
+  ],
+  "results": [
+    {
+      "id": 1,
+      "studentId" : 1,
+      "vak": "wiskunde",
+      "cijfer": 50
+    },
+    {
+      "id": 2,
+      "studentId" : 1,
+      "vak": "nederlands",
+      "cijfer": 50
+    },
+    {
+      "id": 3,
+      "studentId" : 2,
+      "vak": "wiskunde",
+      "cijfer": 50
+    },
+    {
+      "id": 4,
+      "studentId" : 2,
+      "vak": "nederlands",
+      "cijfer": 50
+    },
+    {
+      "id": 5,
+      "studentId" : 3,
+      "vak": "wiskunde",
+      "cijfer": 50
+    },
+    {
+      "id": 6,
+      "studentId" : 3,
+      "vak": "nederlands",
+      "cijfer": 50
+    }
+  ]
+}
