@@ -53,6 +53,18 @@
       "studentId" : 3,
       "vak": "nederlands",
       "cijfer": 50
+    },
+    {
+      "id": 7,
+      "studentId" : 4,
+      "vak": "wiskunde",
+      "cijfer": 50
+    },
+    {
+      "id": 8,
+      "studentId" : 4,
+      "vak": "nederlands",
+      "cijfer": 50
     }
   ]
 }
