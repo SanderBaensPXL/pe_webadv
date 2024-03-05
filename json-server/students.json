@@ -2,19 +2,27 @@
   "students": [
     {
       "id": 1,
-      "name": "Elena"
+      "firstname": "Elena",
+      "lastname": "Elena",
+      "gender": "female"
     },
     {
       "id": 2,
-      "name": "Sofie"
+      "name": "Sofie",
+      "lastname": "Elena",
+      "gender": "female"
     },
     {
       "name": "Tony",
-      "id": 3
+      "id": 3,
+      "lastname": "Elena",
+      "gender": "male"
     },
     {
       "name": "Fred",
-      "id": 4
+      "id": 4,
+      "lastname": "Elena",
+      "gender": "male"
     }
   ],
   "results": [

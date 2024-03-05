@@ -1,0 +1,67 @@
+<script setup>
+async function getUser() {
+  const res = await fetch('http://localhost:3000/students');
+  const { results } = await res.json();
+
+  // console.log(results)
+
+  this.id = results[0].id;
+  this.firstName = results[0].name.first;
+  this.lastName = results[0].name.last;
+  this.gender = results[0].gender;
+}
+</script>
+
+<template>
+  <div id="app" :class="gender">
+    <h1>{{firstName}} {{lastName}}</h1>
+    <h3>Email: {{email}}</h3>
+  </div>
+</template>
+
+<style scoped>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  width: 400px;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h3 {
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+img {
+  border-radius: 50%;
+  border: 5px #333 solid;
+  margin-bottom: 1rem;
+}
+
+.male {
+  border-color: steelblue;
+  background-color: steelblue;
+}
+
+.female {
+  border-color: pink;
+  background-color: pink;
+  color: #333;
+}
+</style>
