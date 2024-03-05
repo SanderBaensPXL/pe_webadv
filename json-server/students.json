@@ -8,18 +8,18 @@
     },
     {
       "id": 2,
-      "name": "Sofie",
+      "firstname": "Sofie",
       "lastname": "Elena",
       "gender": "female"
     },
     {
-      "name": "Tony",
+      "firstname": "Tony",
       "id": 3,
       "lastname": "Elena",
       "gender": "male"
     },
     {
-      "name": "Fred",
+      "firstname": "Fred",
       "id": 4,
       "lastname": "Elena",
       "gender": "male"
