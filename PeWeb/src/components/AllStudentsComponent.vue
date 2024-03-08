@@ -1,10 +1,11 @@
 <template>
   <div>
-    <ul v-if="loaded" class="students-list">
-      <li v-for="student in store.students" :key="student.id" :class="genderClass(student.gender)">
-        {{ student.firstname }} {{ student.lastname }}
-      </li>
-    </ul>
+    <v-card
+        max-width="300"
+        v-if="loaded"
+    >
+      <v-list :items="studentsWithFullName" item-title="fullname" item-value="id"></v-list>
+    </v-card>
     <p v-else>Loading...</p>
   </div>
 </template>
@@ -17,8 +18,16 @@ export default {
   data() {
     return {
       store: useStudentsStore(),
-      loaded: false,
+      loaded: false
     };
+  },
+  computed: {
+    studentsWithFullName() {
+      return this.store.students.map(student => ({
+        ...student,
+        fullname: `${student.firstname} ${student.lastname}`
+      }));
+    }
   },
   mounted() {
     this.store.fetchStudents().then(() => {
