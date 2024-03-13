@@ -2,7 +2,7 @@
   "name": "peweb",
   "version": "0.0.0",
   "private": true,
-   "type": "module",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +10,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "chart.js": "^4.4.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
+    "vue-chartjs": "^5.3.0",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.8"
   },

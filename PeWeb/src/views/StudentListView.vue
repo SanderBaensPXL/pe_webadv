@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <h1>Here we will show a list of persons using a component:</h1>
     <AllStudentsComponent />
   </div>
 </template>
