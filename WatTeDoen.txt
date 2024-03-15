@@ -1,12 +1,12 @@
 Basis
-    - studentenlijst
-    - student details --> punten
-    - router, Get-Request met filter (, Get zonder filter, 2 PUT POST OF PATCH met client side validation (student toevoegen, vak/punt toevoegen)
+    + studentenlijst
+    + student details --> punten
+    + router, Get-Request met filter (, Get zonder filter, 2 PUT POST OF PATCH met client side validation (student toevoegen, vak/punt toevoegen)
 
 Extra
-    - Pinia
-    - Vuetify
+    + Pinia
+    + Vuetify
     - Grid
     - Jest en Puppeteer 6 end to end testen
-    - ESlint
+    + ESlint
     - oefeningen maken

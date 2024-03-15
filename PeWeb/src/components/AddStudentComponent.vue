@@ -36,13 +36,17 @@ export default {
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
             v-model="firstname"
-            :rules="[v => !!v || 'First name is required']"
+            :rules="[v => !!v || 'First name is required',
+                     v => !/[^a-zA-Z0-9\s]/.test(v) || 'Input must not contain special characters',
+                     v => !/\d/.test(v) || 'Last name can not contain numbers']"
             label="First Name"
             required
         ></v-text-field>
         <v-text-field
             v-model="lastname"
-            :rules="[v => !!v || 'Last name is required']"
+            :rules="[v => !!v || 'Last name is required',
+                     v => !/[^a-zA-Z0-9\s]/.test(v) || 'Input must not contain special characters',
+                     v => !/\d/.test(v) || 'Last name can not contain numbers']"
             label="Last Name"
             required
         ></v-text-field>

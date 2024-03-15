@@ -23,7 +23,6 @@ export const useStudentsStore = defineStore('students', {
                 this.error = error.message;
             }
         },
-
         async addStudent(student) {
             try {
                 const response = await fetch('http://localhost:3000/students', {

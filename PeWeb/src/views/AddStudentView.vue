@@ -8,7 +8,7 @@
 import AddStudentComponent from "@/components/AddStudentComponent.vue";
 
 export default {
-  name: 'StudentListView',
+  name: 'addStudent',
   components: {
     AddStudentComponent
   }

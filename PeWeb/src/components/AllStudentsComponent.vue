@@ -26,6 +26,9 @@
       <v-card :elevation="15" :height="800" :width="1000" rounded>
         <StudentResultComponent :studentId="selectedStudentId"
                                 :student-name="selectedStudentName"></StudentResultComponent>
+        <v-btn color="#2a73c5" @click="$router.push({ name: 'AddResult', params: { studentId: selectedStudentId } })">
+          Add Result
+        </v-btn>
       </v-card>
     </div>
   </div>
