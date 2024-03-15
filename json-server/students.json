@@ -23,18 +23,6 @@
       "id": 4,
       "lastname": "Elena",
       "gender": "male"
-    },
-    {
-      "firstname": "ad",
-      "lastname": "ad",
-      "gender": "male",
-      "id": 5
-    },
-    {
-      "firstname": "ad",
-      "lastname": "ad",
-      "gender": "female",
-      "id": 6
     }
   ],
   "results": [
