@@ -53,7 +53,7 @@ export default {
             label="Gender"
             required
         ></v-select>
-        <v-btn :disabled="!valid" @click="submit">Submit</v-btn>
+        <v-btn color="#2a73c5" :disabled="!valid" @click="submit">Submit</v-btn>
       </v-form>
     </v-card-text>
   </v-card>

@@ -6,8 +6,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/" v-slot="{ navigate }"><v-btn>Home</v-btn></RouterLink>
-        <RouterLink to="/studentlist" v-slot="{ navigate }"><v-btn>Students</v-btn></RouterLink>
+        <RouterLink to="/" v-slot="{ navigate }"><v-btn color="#2a73c5">Home</v-btn></RouterLink>
+        <RouterLink to="/studentlist" v-slot="{ navigate }"><v-btn color="#2a73c5">Students</v-btn></RouterLink>
       </nav>
     </div>
   </header>

@@ -73,8 +73,15 @@ export default {
 
 <style>
 #addStudent {
-  background-color: black;
+  background-color: #2a73c5;
   color: white;
+  border-radius: 5px;
+  width: 110px;
+  text-align: center;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }
 
 #wrapper {
