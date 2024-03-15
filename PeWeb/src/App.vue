@@ -17,16 +17,18 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 nav {
+  height: 4em;
   display: flex;
   justify-content: center;
-  padding: 1em;
+  align-content: center;
   background-color: #f9f9f9;
   border-bottom: 1px solid #ccc;
 }
 
 nav a {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
 }
 
 </style>

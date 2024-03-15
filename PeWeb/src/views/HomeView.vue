@@ -16,6 +16,4 @@
 </template>
 
 <style>
-  body{
-  }
 </style>
