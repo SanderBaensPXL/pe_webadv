@@ -23,54 +23,66 @@
       "id": 4,
       "lastname": "Elena",
       "gender": "male"
+    },
+    {
+      "firstname": "ad",
+      "lastname": "ad",
+      "gender": "male",
+      "id": 5
+    },
+    {
+      "firstname": "ad",
+      "lastname": "ad",
+      "gender": "female",
+      "id": 6
     }
   ],
   "results": [
     {
       "id": 1,
-      "studentId" : 1,
+      "studentId": 1,
       "vak": "wiskunde",
       "cijfer": 60
     },
     {
       "id": 2,
-      "studentId" : 1,
+      "studentId": 1,
       "vak": "nederlands",
       "cijfer": 50
     },
     {
       "id": 3,
-      "studentId" : 2,
+      "studentId": 2,
       "vak": "wiskunde",
       "cijfer": 80
     },
     {
       "id": 4,
-      "studentId" : 2,
+      "studentId": 2,
       "vak": "nederlands",
       "cijfer": 50
     },
     {
       "id": 5,
-      "studentId" : 3,
+      "studentId": 3,
       "vak": "wiskunde",
       "cijfer": 50
     },
     {
       "id": 6,
-      "studentId" : 3,
+      "studentId": 3,
       "vak": "nederlands",
       "cijfer": 50
     },
     {
       "id": 7,
-      "studentId" : 4,
+      "studentId": 4,
       "vak": "wiskunde",
       "cijfer": 90
     },
     {
       "id": 8,
-      "studentId" : 4,
+      "studentId": 4,
       "vak": "nederlands",
       "cijfer": 50
     }

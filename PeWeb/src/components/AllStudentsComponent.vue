@@ -7,9 +7,15 @@
           elevation="5"
       >
         <v-list v-if="loaded" elevation="5">
-          <v-list-item v-for="student in studentsWithFullName" :key="student.id" @click="selectStudent(student.id, student.fullname)">
+          <v-list-item v-for="student in studentsWithFullName" :key="student.id"
+                       @click="selectStudent(student.id, student.fullname)">
             <v-list-item-content>
               <v-list-item-title>{{ student.fullname }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item id="addStudent" @click="$router.push({ name: 'AddStudent' })">
+            <v-list-item-content>
+              <v-list-item-title>Add Student</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -18,14 +24,15 @@
     </div>
     <div id="resultsList">
       <v-card :elevation="15" :height="800" :width="1000" rounded>
-        <StudentResultComponent :studentId="selectedStudentId" :student-name="selectedStudentName"></StudentResultComponent>
+        <StudentResultComponent :studentId="selectedStudentId"
+                                :student-name="selectedStudentName"></StudentResultComponent>
       </v-card>
     </div>
   </div>
 </template>
 
 <script>
-import { useStudentsStore } from "@/stores/students";
+import {useStudentsStore} from "@/stores/students";
 import StudentResultComponent from "@/components/StudentResultComponent.vue";
 
 export default {
@@ -55,8 +62,8 @@ export default {
       }
     });
   },
-  methods:{
-    selectStudent(id, name){
+  methods: {
+    selectStudent(id, name) {
       this.selectedStudentId = id;
       this.selectedStudentName = name;
     }
@@ -65,17 +72,23 @@ export default {
 </script>
 
 <style>
-  #wrapper{
-    margin-top: 2em;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    justify-content: space-around;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-  }
-  #studentList{
-    justify-self: end;
-    align-self: start;
-  }
+#addStudent {
+  background-color: black;
+  color: white;
+}
+
+#wrapper {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-content: space-around;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+#studentList {
+  justify-self: end;
+  align-self: start;
+}
 </style>

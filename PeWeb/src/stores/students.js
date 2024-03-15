@@ -22,7 +22,27 @@ export const useStudentsStore = defineStore('students', {
             } catch (error) {
                 this.error = error.message;
             }
+        },
+
+        async addStudent(student) {
+            try {
+                const response = await fetch('http://localhost:3000/students', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(student),
+                });
+                if (!response.ok) {
+                    let status = response.status;
+                    throw new Error(`error status code ${status}`);
+                }
+                const newStudent = await response.json();
+                this.students.push(newStudent);
+            } catch (error) {
+                this.error = error.message;
+            }
         }
-    }
+    },
 });
 
