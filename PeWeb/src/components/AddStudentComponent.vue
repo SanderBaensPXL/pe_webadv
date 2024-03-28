@@ -9,7 +9,6 @@ export default {
       store: useStudentsStore(),
       firstname: '',
       lastname: '',
-      gender: null,
     };
   },
   methods: {
@@ -18,7 +17,6 @@ export default {
         const student = {
           firstname: this.firstname,
           lastname: this.lastname,
-          gender: this.gender,
         };
         // Correctly get the store instance and call the action
         this.store.addStudent(student);
@@ -50,13 +48,6 @@ export default {
             label="Last Name"
             required
         ></v-text-field>
-        <v-select id="gender_selector"
-            v-model="gender"
-            :items="['male', 'female']"
-            :rules="[v => !!v || 'Gender is required']"
-            label="Gender"
-            required
-        ></v-select>
         <v-btn id="submit" color="#2a73c5" :disabled="!valid" @click="submit">Submit</v-btn>
       </v-form>
     </v-card-text>

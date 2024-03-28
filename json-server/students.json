@@ -3,32 +3,32 @@
     {
       "id": 1,
       "firstname": "Elena",
-      "lastname": "Elena",
-      "gender": "female"
+      "lastname": "Elena"
     },
     {
       "id": 2,
       "firstname": "Sofie",
-      "lastname": "Elena",
-      "gender": "female"
+      "lastname": "Elena"
     },
     {
       "firstname": "Tony",
       "id": 3,
-      "lastname": "Elena",
-      "gender": "male"
+      "lastname": "Elena"
     },
     {
       "firstname": "Fred",
       "id": 4,
-      "lastname": "Elena",
-      "gender": "male"
+      "lastname": "Elena"
     },
     {
       "firstname": "sander",
       "lastname": "baens",
-      "gender": "male",
       "id": 5
+    },
+    {
+      "firstname": "Ian",
+      "lastname": "Notermans",
+      "id": 6
     }
   ],
   "results": [

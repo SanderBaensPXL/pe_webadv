@@ -7,5 +7,11 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  env: {
+    jest: true,
+  },
+  plugins: [
+    'jest',
+  ],
 }

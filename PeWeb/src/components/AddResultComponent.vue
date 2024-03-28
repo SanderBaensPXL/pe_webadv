@@ -38,14 +38,14 @@ export default {
     <v-card-title>Add Student</v-card-title>
     <v-card-text>
       <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field
+        <v-text-field id="course_input"
             v-model="vak"
             :rules="[v => !!v || 'Course is required',
                      ]"
             label="Course"
             required
         ></v-text-field>
-        <v-text-field
+        <v-text-field id="result_input"
             v-model="cijfer"
             :rules="[
                 v => !!v || 'Result is required',
@@ -55,7 +55,7 @@ export default {
             label="Result"
             required
         ></v-text-field>
-        <v-btn color="#2a73c5" :disabled="!valid" @click="submit">Submit</v-btn>
+        <v-btn id="submit" color="#2a73c5" :disabled="!valid" @click="submit">Submit</v-btn>
       </v-form>
     </v-card-text>
   </v-card>

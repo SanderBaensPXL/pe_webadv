@@ -14,46 +14,78 @@ describe('End-to-End Tests', () => {
     });
 
     test('should add a new student', async () => {
-        await page.goto('http://localhost:5173/add-student'); // Replace with your Vue app's URL
-
-        // Simulate filling out the form to add a new student
+        await page.goto('http://localhost:5173/add-student');
         await page.type('#first_name_input', 'John');
+        console.log("firstname put in");
         await page.type('#last_name_input', 'Doe');
+        console.log("lastname put in");
 
-        await page.click('.v-field__append-inner');
+        await Promise.all([
+            page.waitForNavigation({ waitUntil: 'networkidle0' }),
+            page.click('#submit'),
+        ]);
 
-// Wait for the dropdown to appear
-        await page.waitForSelector('.v-select-list');
+        await page.waitForSelector('.v-list-item-title', { text: 'John Doe'});
+        }, 10000);
 
-// Select an option from the dropdown (replace 'male' or 'female' with the value of the option you want to select)
-        const optionValue = 'male'; // or 'female'
-        await page.click(`.v-select-list [data-value="${optionValue}"]`);
-        await page.click('#submit');
-
-        // Wait for the student list to update
-        await page.waitForSelector('.student-list-item');
-
-        // Verify that the new student is added to the list
-        const studentList = await page.$$('.student-list-item');
-        expect(studentList.length).toBeGreaterThan(0);
+    test('submit button for addStudent is disabled when not all fields have been filled in', async () => {
+        await page.goto('http://localhost:5173/add-student');
+        await page.type('#first_name_input', 'John');
+        const isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(true);
     }, 10000);
 
-    test('should add a result for a student', async () => {
-        // Simulate navigating to a specific student's page
-        await page.click('.student-list-item:first-child');
+    test('submit button remains disabled when invalid values are entered', async () => {
+        await page.goto('http://localhost:5173/add-student');
+        let isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(true);
 
-        // Simulate adding a result for the student
-        await page.type('#vak', 'Math');
-        await page.type('#cijfer', '90');
-        await page.click('#submit-button');
+        await page.type('#first_name_input', 'John@');
+        isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(true);
 
-        // Wait for the results list to update
-        await page.waitForSelector('.result-item');
+        await page.type('#last_name_input', 'Doe123');
+        isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(true);
 
-        // Verify that the new result is added to the list
-        const resultList = await page.$$('.result-item');
-        expect(resultList.length).toBeGreaterThan(0);
-    });
+    }, 10000);
 
-    // Add more test cases as needed
+    test('submit button for addResult is disabled when not all fields have been filled in', async () => {
+        await page.goto('http://localhost:5173/add-result/1');
+        await page.type('#course_input', 'Math');
+        const isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(true);
+    }, 10000);
+
+    test('submit button becomes enabled when a number is entered into the result input field', async () => {
+        await page.goto('http://localhost:5173/add-result/1');
+
+        await page.type('#course_input', 'Math');
+        await page.evaluate(() => document.querySelector('#result_input').value = '');
+        await page.type('#result_input', 'maths');
+        let isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(true);
+
+        await page.evaluate(() => document.querySelector('#result_input').value = '');
+        await page.type('#result_input', '85');
+        isSubmitButtonDisabled = await page.$eval('#submit', button => button.disabled);
+        expect(isSubmitButtonDisabled).toBe(false);
+    }, 10000);
+
+    test('should add a new result', async () => {
+        await page.goto('http://localhost:5173/add-result/1')
+
+        await page.type('#course_input', 'Math');
+        console.log("Course input put in");
+        await page.type('#result_input', '85');
+        console.log("Result input put in");
+
+        await Promise.all([
+            page.waitForNavigation({ waitUntil: 'networkidle0' }),
+            page.click('#submit'),
+        ]);
+
+        await page.waitForSelector('#resultsList .v-table__wrapper table tbody tr', { text: 'Math' });
+        await page.waitForSelector('#resultsList .v-table__wrapper table tbody tr', { text: '85' });
+    }, 10000);
 });
