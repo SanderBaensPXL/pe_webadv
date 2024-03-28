@@ -34,7 +34,7 @@ export default {
     <v-card-title>Add Student</v-card-title>
     <v-card-text>
       <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field
+        <v-text-field id="first_name_input"
             v-model="firstname"
             :rules="[v => !!v || 'First name is required',
                      v => !/[^a-zA-Z0-9\s]/.test(v) || 'Input must not contain special characters',
@@ -42,7 +42,7 @@ export default {
             label="First Name"
             required
         ></v-text-field>
-        <v-text-field
+        <v-text-field id="last_name_input"
             v-model="lastname"
             :rules="[v => !!v || 'Last name is required',
                      v => !/[^a-zA-Z0-9\s]/.test(v) || 'Input must not contain special characters',
@@ -50,14 +50,14 @@ export default {
             label="Last Name"
             required
         ></v-text-field>
-        <v-select
+        <v-select id="gender_selector"
             v-model="gender"
             :items="['male', 'female']"
             :rules="[v => !!v || 'Gender is required']"
             label="Gender"
             required
         ></v-select>
-        <v-btn color="#2a73c5" :disabled="!valid" @click="submit">Submit</v-btn>
+        <v-btn id="submit" color="#2a73c5" :disabled="!valid" @click="submit">Submit</v-btn>
       </v-form>
     </v-card-text>
   </v-card>
