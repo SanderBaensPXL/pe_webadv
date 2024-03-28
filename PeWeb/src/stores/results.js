@@ -27,7 +27,7 @@ export const useResultsStore = defineStore('results', {
 
             if (existingResult) {
                 this.error = 'Result already exists.';
-                console.log("Course already exists");
+                alert("Course already exists");
             }else{
                 try {
 
@@ -39,6 +39,7 @@ export const useResultsStore = defineStore('results', {
                         body: JSON.stringify({
                             ...result,
                             studentId: parseInt(result.studentId),
+                            vak: result.vak.toLowerCase(),
                             cijfer: parseInt(result.cijfer)
                         }),
                     });
