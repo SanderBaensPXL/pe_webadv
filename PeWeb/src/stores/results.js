@@ -22,10 +22,10 @@ export const useResultsStore = defineStore('results', {
         async addResult(result) {
             const existingResult = this.results.find(r =>
                 parseInt(r.studentId) === parseInt(result.studentId) &&
-                r.vak === result.vak
+                r.vak.toUpperCase() === result.vak.toUpperCase()
             );
 
-            if (existingResult !== undefined) {
+            if (existingResult) {
                 this.error = 'Result already exists.';
                 console.log("Course already exists");
             }else{
